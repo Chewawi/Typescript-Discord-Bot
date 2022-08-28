@@ -6,7 +6,7 @@ export default (c: Client): void => {
 	process.on('unhandledRejection', async(reason, p) => {
  console.log(colors.yellow(' [antiCrash]')+colors.gray(' :: ')+colors.red('Unhandled Rejection/Catch'));
  console.log(reason, p);
-		const channel = await client.channels!.fetch("997350676109733918")
+		const channel = await client.channels!.fetch("1013277516527583274")
 			// @ts-ignore
 			channel!.send({
 			embeds: [
@@ -28,7 +28,7 @@ export default (c: Client): void => {
  process.on("uncaughtException", async(err, origin) => {
  console.log(colors.yellow(' [antiCrash]')+colors.gray(' :: ')+colors.red('Uncaught Exception/Catch'));
  console.log(err, origin);
-	const channel = await client.channels!.fetch("997350676109733918")
+	const channel = await client.channels!.fetch("1013277516527583274")
 			// @ts-ignore
 			channel.send({
 			embeds: [
@@ -51,7 +51,7 @@ export default (c: Client): void => {
 process.on('uncaughtExceptionMonitor', async(err, origin) => {
  console.log(colors.yellow(' [antiCrash]')+colors.gray(' :: ')+colors.red('Uncaught Exception/Catch')+colors.gray(' (MONITOR)'));
  console.log(err, origin);
-	 const channel = await client.channels!.fetch("997350676109733918")
+	 const channel = await client.channels!.fetch("1013277516527583274")
 			// @ts-ignore
 			channel.send({
 			embeds: [
@@ -107,7 +107,7 @@ console.log(colors.gray("\n[ANTICRASH]: Enabled\n"))
 let y = process.openStdin()
 y.addListener('data', res => {
     let x = res.toString().trim().split(/ +/g)
-    const channel = client.channels.cache.get("997350676109733918")
+    const channel = client.channels.cache.get("1013277516527583274")
 	// @ts-ignore
     channel.send(`${x.join(' ')}`);
 })

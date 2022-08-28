@@ -7,9 +7,7 @@ import { Util } from "./auxiliar/utils";
 import { Database } from "midb"
 import { Timeouts } from "timeouts.ts-dev";
 import { clientReady, messageCreate, antiCrash, customTriggers } from "./auxiliar/handler/eventHandler"
-import DarkDashboard from 'dbd-dark-dashboard';
-import DBD from "discord-dashboard";
-
+import { Panel } from '@akarui/aoi.panel'
 
 // -------> CLIENT <--------
 let client: any = new Client({
@@ -62,64 +60,26 @@ process.removeAllListeners('warning');
 
  (client as any).db = db;
  (client as any).config = config;
+ (client as any).util = util;
 
-let langsSettings = {};
+/*const app = express();
+const port = 3000;
+app.get('/', (req, res) => res.send('Hello World!'));
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));*/
 
-/* --- DASHBOARD --- */
-/*(async ()=>{
-    let DBD = require('discord-dashboard');
-    await DBD.useLicense(config.dbd_license);
-    DBD.Dashboard = DBD.UpdatedClass();
-
-    const Dashboard = new DBD.Dashboard({
-        port: 80,
-        client: {
-            id: config.discord.client_id,
-            secret: config.discord.client_secret
-        },
-        redirectUri: config.redirect_uri,
-        domain: 'https://XiaomTSv2.soyblas.repl.co',
-        bot: client,
-        theme: DarkDashboard(DBD.default_configs.dbdDarkDashboard),
-        settings: [
-            {
-                categoryId: 'setup',
-                categoryName: "Setup",
-                categoryDescription: "Setup your bot with default settings!",
-                categoryOptionsList: [
-                    {
-                        optionId: 'lang',
-                        optionName: "Language",
-                        optionDescription: "Change bot's language easily",
-                        optionType: DBD.formTypes.select({"Polish": 'pl', "English": 'en', "French": 'fr'}),
-                        getActualSet: async ({guild}) => {
-                            return langsSettings[guild.id] || null;
-                        },
-                        setNew: async ({guild,newData}) => {
-                            langsSettings[guild.id] = newData;
-                            return;
-                        }
-                    },
-                ]
-            },
-        ]
-    });
-    Dashboard.init();
-})();*/
-
-// @ts-ignore
-const { Panel } = require('@akarui/aoi.panel');
 const panel = new Panel({
-    username: "test",//username for logging in
-    password: "2", //password for logging in
-    secret: "aoijs",//session secret
+    username: "e",//username for logging in
+    password: "123",//password for logging in
+ // @ts-ignor
+    secret: require('crypto').randomBytes(16).toString("hex"),//session secret
     port: 3000,//port on which website is hosted, Not required! Default 3000
     bot: client,//your aoi.js client
-    mainFile: "src/index.ts",//Main file where code is running.Not required, default taken from package.json
-    commands: "src"// folder name in which all the edit needing files are there.
+    mainFile: "./src/index.js",//Main file where code is running.Not required, default taken from package.json
+    commands: "./src/commands",// folder name in which all the edit needing files are there.
+    interaction:"./src"//interactions folder
 })
-panel.loadPanel()//Load The Panel
-
+panel.loadPanel()
 panel.onError()
+
 
 export { client, db, util, config, timeouts }

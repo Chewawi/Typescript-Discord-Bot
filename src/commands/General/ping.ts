@@ -21,10 +21,10 @@ author: {
 description: `_ _ ${d.util.lang(d.idiom, 'Latencia del cliente.', 'Client latency.', 'Latência do cliente.')}_ _ `,
 thumbnail: 'https://api.miduwu.ga/image/circle?image='+d.client.user!.displayAvatarURL({ forceStatic: true }),
 fields: [{
-name: '_ _ '+d.util.emoji('Cw_Use')+' '+d.util.lang(d.idiom, 'Cliente', 'Client', 'Cliente'),
+name: '_ _ '+d.client.util.emoji('uni_Ping')+' '+d.util.lang(d.idiom, 'Cliente', 'Client', 'Cliente'),
 value: '`'+d.client.ws.ping+' ms` '+d.util.latEmoji(d.client.ws.ping)
 }, {
-name: '_ _ '+d.util.emoji('Akn_Message')+' '+d.util.lang(d.idiom, 'Mensajes', 'Messages', 'Mensagens'),
+name: '_ _ '+d.util.emoji('uni_Msg')+' '+d.util.lang(d.idiom, 'Mensajes', 'Messages', 'Mensagens'),
 value: '`'+(executed - d.message.createdTimestamp)+' ms` '+d.util.latEmoji(Date.now() - d.message.createdTimestamp)
 }, {
 name: '_ _ '+d.util.emoji('icons_folder')+' '+d.util.lang(d.idiom, 'Base de datos'),

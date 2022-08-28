@@ -11,7 +11,7 @@ export default (client: any): void => {
 
     if(!(message.channel instanceof BaseGuildTextChannel) && !message.channel.isThread()) return;
     if(message.author.bot) return;
-     
+  
 				
 		const hexToDecimal = hex => parseInt(hex, 16);
 
@@ -33,7 +33,8 @@ export default (client: any): void => {
     let command: Command | undefined = commands.find(cmd => cmd.data.name === probably || cmd.data.aliases && cmd.data.aliases.includes(probably))
 			if(!command) return message.reply('_ _ **El comando no fue encontrado.**')
 				
-			if(command.data.onlyDev && !array.includes(message.author.id)) return;
+//@ts-ignore
+			//if(command.data.onlyDev && !array.includes(message.author.id)) return;
 		
 						prefix = guild_prefix			
     const d: Data = { message, client, args, util, /* db, config, */ idiom, color, prefix /* timeout */ }

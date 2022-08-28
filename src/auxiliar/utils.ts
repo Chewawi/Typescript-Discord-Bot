@@ -90,9 +90,10 @@ class Util {
     }  
 	
 // -----------> EMOJI <------------
-	emoji(emoji: string): string {
-		if(!emoji) return 'NONE';
-		let result = this.client.emojis.cache.find(e=> e.name === emoji);
+	emoji(emji: string): string {
+		if(!emji) return 'NONE';
+		let result = this.client.emojis.cache.find(e=> e.name == emji);
+//@ts-ignore
     return `<:${result!.name}:${result!.id}>`;
 	}
 
