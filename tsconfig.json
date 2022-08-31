@@ -5,7 +5,6 @@
         "rootDir": "./src/",
         "outDir": "./dist/",
         "strict": true,
-			  "noImplicitAny": false,
         "moduleResolution": "node",
         "importHelpers": true,
         "experimentalDecorators": true,
@@ -15,14 +14,27 @@
         "resolveJsonModule": true,
         "forceConsistentCasingInFileNames": true,
         "removeComments": true,
+        "noImplicitAny": false,
+        "strictNullChecks": false,
+        "exactOptionalPropertyTypes": true,
         "typeRoots": [
-            "node_modules/@types"
+            "node_modules/@types",
+            "main.d.ts"
         ],
         "sourceMap": false,
-        "baseUrl": "./"
+        "baseUrl": "./",
+        "paths": {
+            "aux/*": ["src/auxiliar/*", "dist/auxiliar/*"],
+            "commands/*": ["src/commands/*", "dist/commands/*"],
+            "main": ["src/main", "dist/main"],
+            "types": ["index"]
+        }
+    },
+    "ts-node": {
+        "require": ["tsconfig-paths/register"]
     },
     "files": [
-        "src/index.ts"
+        "src/main.ts"
     ],
     "include": [
         "./**/*.ts"
@@ -31,4 +43,4 @@
         "node_modules",
         "dist"
     ],
-}
+    }
