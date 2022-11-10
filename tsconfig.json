@@ -16,7 +16,6 @@
         "removeComments": true,
         "noImplicitAny": false,
         "strictNullChecks": false,
-        "exactOptionalPropertyTypes": true,
         "typeRoots": [
             "node_modules/@types",
             "main.d.ts"

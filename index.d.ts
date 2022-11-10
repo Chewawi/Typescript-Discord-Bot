@@ -52,6 +52,7 @@ export interface SlashInteraction extends djs.CommandInteraction {
 export interface ThrowOptions {
     bold?: boolean
     defer?: boolean
+	emoji?: boolean
 }
 
 export enum Types {
@@ -84,11 +85,19 @@ export interface Tag {
     user: djs.Snowflake
 }
 
+export interface Greet {
+	name: string
+	channel: string
+	content: string
+}
+
 export interface GuildModel {
     _id: string
     prefix?: string
     idiom?: Idioms
     tags?: { bans: djs.Snowflake[], list: Tag[] }
+	triggers?: { cc: Tag[] }
+	grettings?: { cc: Greet[] }
 }
 
 export type Data<K extends keyof DataTypes> = DataTypes[K]

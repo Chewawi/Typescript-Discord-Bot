@@ -1,41 +1,50 @@
 {
   "scripts": {
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+    "start": "clear && echo 'Runing Prettier...' && clear && npx prettier --write src/** && clear && echo 'Runing eslint...' && npx eslint src/** --fix"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/lodash": "^4.14.182",
     "@types/ms": "^0.7.31",
     "@types/node": "^18.6.2",
-    "@typescript-eslint/eslint-plugin": "^4.7.0",
-    "@typescript-eslint/parser": "^4.7.0",
-    "eslint": "^7.13.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^4.2.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.0.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.7.4"
   },
   "dependencies": {
     "@discordjs/rest": "^1.1.0",
+    "@igorkowalczyk/repl-uptime": "^1.2.1",
+    "@midowo/anime.js": "^4.0.0-ts",
     "@midowo/tokyo-script.ts": "^3.0.2",
     "@vitalets/google-translate-api": "^8.0.0",
     "aux": "^0.0.6",
     "axios": "^0.23.0",
     "colors": "^1.4.0",
+    "discord-html-transcripts": "^2.6.1",
     "discord.js": "^14.1.2",
     "discord.js-akinator": "^4.0.1",
     "discord.js-docs": "^0.3.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "google-img-scrap": "^1.0.8",
+    "loadash": "^1.0.0",
     "lodash": "^4.17.21",
     "midb": "^1.5.0",
     "mongoose": "^6.5.0",
     "ms": "^2.1.3",
+    "pagination.djs": "^4.0.5",
     "prettier": "^2.1.2",
-    "replit-dis-uniter": "^1.4.0",
+    "replit-dis-uniter": "^1.4.1",
+    "simply-djs": "^3.0.2",
+    "src": "^1.1.2",
     "timeouts.ts-dev": "^4.0.0"
   }
 }

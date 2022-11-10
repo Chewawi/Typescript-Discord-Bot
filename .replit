@@ -1,6 +1,12 @@
 run = "npx ts-node src/main.ts"
-#run="clear && echo 'Runing Prettier...' && npx prettier --write src/** && echo 'Runing eslint...' && npx eslint src/** && echo 'Runing script:\n' && npx ts-node src/main.ts"
-entrypoint = "index.ts"
+onBoot = "sh bun.cfg/onBoot.sh"
+
+hidden=['bun.cfg', 'yarn.lock', 'package-lock.json']
+
+[env]
+PATH="/home/runner/.bun/bin"
+
+entrypoint = "src/main.ts"
 
 [packager]
 language = "nodejs"
@@ -10,8 +16,8 @@ enabledForHosting = false
 packageSearch = true
 guessImports = true
 
-[env]
-XDG_CONFIG_HOME = "/home/runner/.config"
+#[env]
+#XDG_CONFIG_HOME = "/home/runner/.config"
 
 [nix]
 channel = "stable-21_11"
